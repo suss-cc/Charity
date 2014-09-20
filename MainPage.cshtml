@@ -1,0 +1,44 @@
+﻿@{
+    
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script type="text/javascript">
+            function fillform(clicked_id) {
+                var j = document.getElementById("combo");
+                var option = document.createElement("option");
+                if (clicked_id == edu) {
+                    var a = ["teach", "books"];}
+                    if(clicked_id == env )
+                    {
+                        var b=[]
+                        
+                    }
+                    option.text = "teach";
+                    option.value = "edu1";
+                    combo.add("option");
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <div style="margin-left: 1100px; background-color: #ffd800">
+        <table border="1" >
+        <tr>
+            <td><input id="edu" type="image" src="Images/edu.gif" alt="submit" onclick="fillform(this.id)" height="100px" width="80px"></td>
+            <td><input id="env" type="image" src="Images/environment.jpg" alt="submit" height="100px" width="80px"  onclick="fillform(this.id)"></td>
+             <td><input  id="med"type="image" src="Images/medical.jpg" alt="submit" height="100px" width="80px"  onclick="fillform(this.id)"></td>
+        </tr>
+        </table>
+            <select id="combo" style="background-color: #0026ff" >
+                
+            </select>
+        </div>
+    </body>
+</html>
