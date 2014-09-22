@@ -9,36 +9,75 @@
         <meta charset="utf-8" />
         <title></title>
         <script type="text/javascript">
-            function fillform(clicked_id) {
-                var j = document.getElementById("combo");
-                var option = document.createElement("option");
-                if (clicked_id == edu) {
-                    var a = ["teach", "books"];}
-                    if(clicked_id == env )
-                    {
-                        var b=[]
-                        
-                    }
-                    option.text = "teach";
-                    option.value = "edu1";
-                    combo.add("option");
+            function clearitems() {
+                var x = document.getElementById("combo")
+                x.remove(x.selectedIndex);
+                var combo = document.getElementById("combo");
+                var length = combo.options.length;
+                for (var i = 0; i <= length; i++) {
+                    combo.options[i] = null;
                 }
 
+            }
+            function options(txt1, txt2) {
+                var combo = document.getElementById("combo");
+                var option = document.createElement("option");
+                option.text = txt1;
+                option.value = txt2;
+                options.onSelect = "formtable()";
+                try {
+                    combo.add(option, null); //Standard 
+                } catch (error) {
+                    combo.add(option); // IE only
+                }
+            }
+
+            function fillform(click_id) {
+
+
+                if (click_id == "edu") {
+                    clearitems();
+                    options("teach", "car1");
+                    options("books", "car2");
+                }
+                if (click_id == "env") {
+                    clearitems();
+                    options("lakecleanup", "car3");
+                    options("society cleaning", "car4");
+                }
+                if (click_id == "med") {
+
+                    clearitems();
+                    options("medicalcamp", "car5");
+                    options("freeconsuting", "car6");
+                }
+                function formtable()
+                {
+
+                    
+                }
             }
         </script>
     </head>
     <body>
+
         <div style="margin-left: 1100px; background-color: #ffd800">
         <table border="1" >
         <tr>
-            <td><input id="edu" type="image" src="Images/edu.gif" alt="submit" onclick="fillform(this.id)" height="100px" width="80px"></td>
+            <td><input id="edu" type="image" src="Images/edu.gif" alt="submit" height="100px" width="80px" onclick= "fillform(this.id)" ></td>
             <td><input id="env" type="image" src="Images/environment.jpg" alt="submit" height="100px" width="80px"  onclick="fillform(this.id)"></td>
              <td><input  id="med"type="image" src="Images/medical.jpg" alt="submit" height="100px" width="80px"  onclick="fillform(this.id)"></td>
         </tr>
         </table>
+            
             <select id="combo" style="background-color: #0026ff" >
-                
+                <option>Select</option>    
             </select>
+            <table id="tabl1">
+                <thead>
+                <tr>
+                <th>srno</th><th>booktitle</th><th>no of books</th><th>save</th></tr></thead>
+            </table>
         </div>
     </body>
 </html>
