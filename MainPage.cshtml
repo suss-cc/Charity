@@ -10,15 +10,14 @@
         <title></title>
         <script type="text/javascript">
             function clearitems() {
-                var x = document.getElementById("combo")
-                x.remove(x.selectedIndex);
+                var x = document.getElementById("combo");
                 var combo = document.getElementById("combo");
                 var length = combo.options.length;
                 for (var i = 0; i <= length; i++) {
-                    combo.options[i] = null;
+                    x.remove(0);
                 }
-
             }
+
             function options(txt1, txt2) {
                 var combo = document.getElementById("combo");
                 var option = document.createElement("option");
@@ -51,16 +50,14 @@
                     options("medicalcamp", "car5");
                     options("freeconsuting", "car6");
                 }
-                function formtable()
-                {
-
+               
                     
+
                 }
-            }
+            
         </script>
     </head>
     <body>
-
         <div style="margin-left: 1100px; background-color: #ffd800">
         <table border="1" >
         <tr>
@@ -69,15 +66,9 @@
              <td><input  id="med"type="image" src="Images/medical.jpg" alt="submit" height="100px" width="80px"  onclick="fillform(this.id)"></td>
         </tr>
         </table>
-            
-            <select id="combo" style="background-color: #0026ff" >
+                <select id="combo" style="background-color: #0026ff;width: 100px" >
                 <option>Select</option>    
             </select>
-            <table id="tabl1">
-                <thead>
-                <tr>
-                <th>srno</th><th>booktitle</th><th>no of books</th><th>save</th></tr></thead>
-            </table>
-        </div>
+            </div>
     </body>
 </html>
